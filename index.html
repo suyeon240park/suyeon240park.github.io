@@ -195,8 +195,10 @@
     <!-- Fourth Section: Projects -->
     <section id="projects" class="section scrollspy">
       <h3 class="page-title white-text teal">Projects</h3>
-      <div class="container"><div class="card"><div class="card-content"><span class="card-title teal-text">Study Productivity Platform</span><p>A study tracking platform built with TypeScript, Next.js, and Firebase.</p></div></div>
-        <div class="card"><div class="card-content"><span class="card-title teal-text">FaceChat</span><p>An interactive chat interface with emotion driven speech and real time 3D facial animation.</p></div></div></div>
+      <div class="container">
+        <div id="project-list"></div>
+        <button id="load-more-projects" type="button" class="btn teal">Load More</button>
+      </div>
     </section>
 
     <!-- Fifth Section: Skills -->
@@ -237,6 +239,39 @@
       </div>
     </section>
   </main>
+
+  <script>
+    const projects = [
+      {
+        title: "Study Productivity Platform",
+        description: "A study tracking platform built with TypeScript, Next.js, and Firebase."
+      },
+      {
+        title: "FaceChat",
+        description: "An interactive chat interface with emotion driven speech and real time 3D facial animation."
+      },
+      {
+        title: "Open-Source RPA Automation Tool",
+        description: "A JavaScript and Google Apps Script tool that automates financial data processing."
+      },
+      {
+        title: "GIS Safety Map: SafeCity",
+        description: "A C++ map application combining real time traffic and historical crime data with A* pathfinding."
+      }
+    ];
+
+    function displayProjects(count) {
+      document.getElementById("project-list").innerHTML = projects.slice(0, count).map(project =>
+        `<div class="card"><div class="card-content"><span class="card-title teal-text">${project.title}</span><p>${project.description}</p></div></div>`
+      ).join("");
+      document.getElementById("load-more-projects").disabled = count >= projects.length;
+    }
+
+    displayProjects(2);
+    document.getElementById("load-more-projects").addEventListener("click", function () {
+      displayProjects(projects.length);
+    });
+  </script>
 
   <!-- typed.js -->
   <script src="assets/vendor/typed.js/typed.min.js"></script>
