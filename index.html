@@ -11,7 +11,7 @@
   <!-- Font Awesome Icon - CSS-->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
   <!-- Custom Styles-->
-  <link rel="stylesheet" href="assets/css/style.css?v=activity3-blue" />
+  <link rel="stylesheet" href="assets/css/style.css?v=activity6-dark-mode" />
   <title>Suyeon Park | Software Engineer</title>
 
   <!-- Open Graph-->
@@ -175,6 +175,7 @@
         <h5>Software engineer and fourth-year Computer Engineering student at the University of Toronto.</h5>
         <p><a href="https://github.com/suyeon240park">GitHub</a> | <a href="https://www.linkedin.com/in/suyeon240park/">LinkedIn</a></p>
         <p><a href="#about" class="readme">Read More</a> <a href="#contact" class="contactme">Contact Me</a></p>
+        <button id="dark-mode-toggle" type="button" class="btn teal">Dark mode</button>
       </div></div>
     </section>
 
@@ -239,6 +240,13 @@
       </div>
     </section>
   </main>
+
+  <script>
+    document.getElementById("dark-mode-toggle").addEventListener("click", function () {
+      const darkMode = document.body.classList.toggle("dark-mode");
+      this.textContent = darkMode ? "Light mode" : "Dark mode";
+    });
+  </script>
 
   <script>
     const projects = [
