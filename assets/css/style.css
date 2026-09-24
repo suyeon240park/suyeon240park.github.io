@@ -125,6 +125,7 @@
 
 body {
   color: #333;
+  background-color: #eff6ff;
   font-size: 18px;
 }
 
@@ -200,7 +201,7 @@ nav i {
 } */
 
 main {
-  background: url(../../assets/img/bg.png) repeat;
+  background: #eff6ff;
   padding-left: 190px;
 }
 
